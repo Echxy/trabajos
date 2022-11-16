@@ -1,0 +1,38 @@
+LEERME.TXT Tarea 1 parte 2 Diego Echeverria 
+
+La base del codigo es:
+
+basic_shapes = archivo con todas las figuras ya creadas, aqui use el rainbowcube y añadi el codigo para hacer una esfera
+easy_shaders = archivo que guarda todos los tipos de shaders a los cuales asignare la pipeline, use el simple nomas
+gpu_shape = esta en conjunto de la función auxiliar createGPUShape() se encongargo de los buffers de las figuras
+transformations = todas las tranformaciones 2d y 3d, uso para el movimiento de la cámara, las rotaciones, el escalado y las traslaciones
+assets_path = busca en el directorio los assets en la carpeta llamada assets
+
+El cubo se mueve con la clase controller donde al presionar el boton la camara rota según un ángulo, 
+presionar los botones activa la rotación y al dejar de presionar se cambia el valor a 0 para que se detenga. Programé para que rote
+en el eje Z y el en el eje Y para poder visualizar mejor si las conlisiones funcionaban 
+(que se mueva por el eje Y es algo adicional, pero no  creo que cuente como algo creativo)
+
+Las esferas fueron creadas con ayuda de internet viendo las coordenadas esfericas y mucho ensayo y error. Para estas fue creada la clase
+Esfera donde guardo sus coordenadas y caracteristicas con las cuales se updatean y su colision con los muros. Luego la dupla entra 
+a la clase del controlador donde se revisa la colisión entre ellos. La colision entre las bolas se revisa la normal y la tangente para
+conservar el momentum. Por como nos dijo el aux las colisiones solo se ven desde un punto de vista 2D ya que sus coordenadas Z SIEMPRE
+serán identicas.
+
+Respecto al cubo, al principio hice un cubo en GL_LINE y mucho después me enteré de que hacia que hacer cada arista, por ende, las dimensiones
+estan medio raras, pero es que fueron hechas para el cubo de las colisiones. A este cubo le calcule todas sus dimensiones y es por eso que
+lo tengo calculado su largo a partir de su data en el basic_shapes y use la perspectiva perpective cada no tenet que reescalar
+
+En términos de bugs pasa que a veces las colisiones van muy rápido y se pegan, por ejemplo, la pelota con el techo y las pelotas entre ellas
+
+PS: quise en un momento usar texturas en las pelotas, pero esto probó ser demasiado complicado, por ende aprendí a poner fotos y las llené de gatos
+tambien hay controles
+P = reinicia la camara
+O = reinicia el zoom
+Q = zoom in
+W = zoom out
+Left/Right = Z rotation
+Up/Down = Y rotation
+# Si tiene problema con los assets es porque la carpeta de assets debe estar aparte de la carpeta de entregables
+
+
