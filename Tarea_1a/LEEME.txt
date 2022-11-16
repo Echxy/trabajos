@@ -1,0 +1,33 @@
+
+Tarea 1: parte a)  Diego Echeverria
+
+Explicando por partes
+
+La base del codigo esta extraida de los .py dados por los auxiliares, más que nada el easy-shaders y el easy-gpu. Usando el easy-shapes lo edite e hice uno propio de figuras
+para crear el semicirculo y el rectangulo usados en el logo.
+
+Dando un resumen de cada python auxiliar tenemos:
+easy_shaders : se dedica a crear los shaders con los que se van a hacer las figuras, arma el VAO, se encarga de posición y color
+gpu_shape : se encarga del vao, vbo y ebo, recibe los datos de los vertices y uniones de las figuras para luego darselo al shader
+Figuras_practicas : archivo donde se crear las figuras con sus vertices y indices. Estas figuras luego se invocan en el trabajo principal
+transformations: un archivo donde se guardas todas las transformación en 2D necesarias y las simplifica en funciones que puedes invocar
+
+Todas las primitivas estan escaladas para caber en el cuadrado negro de 160x120.
+
+imitando el codigo de gravedad hago funcionar la clase Movement que irá actualizando todo lo que se necesite mover o cambiar.
+Las colisiones funcionan, y los choques se realizan solo una vez, sin embargo cuadno rota parte del logo se sale de la pantalla, además por el hecho de que rota su direccion 90° grados
+luego de un rato te das cuentas que hace un cuadrilatero y se queda en esta secuancia por el resto de la animación.
+
+
+debido a las iniciales y el rut que use la dirección inicial es muy vertical y al correr el programa no se nota ni si esta moviendose diagonalmente y el cuando de tamaño es dificil de notar
+asi que cuando programe todo me fui fijando en un print() de los valores de direccion y tamaño. 
+
+
+Los circulos utilizados para la letra la C y la letra D la cantidad de poligonos debe ser un numero par por como esta hecho el codigo con //2 si usas un numero inpar la figura no se completa
+)
+para la rotacion de la figura aplico una rotación al principio de su matriz para girar todas las figuras sobre su centro por cada choque y cambiando (x,y) -> (y,-x) 
+
+Como agregado creativo hice un codigo que en cada choque a una probabilidad de que el logo cambie de color.
+
+
+El codigo esta escrito para que se use el sys.argv y se inicie el programa desde el terminal, ya que esto lo pidio en el enunciado
