@@ -1,0 +1,48 @@
+LEEME.TXT Tarea 2 parte 1 Diego Echeverria 
+
+##################################Todos los import son estos  ####################################
+import glfw
+from OpenGL.GL import *
+import numpy as np
+import sys
+import os.path
+import transformations as tr
+import basic_shapes as bs
+import easy_shaders as es
+import scene_graph as sg
+from assets_path import getAssetPath
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import modelos
+###################################################################################################
+En su mayoria ya estan todos repetidos de trabajos anteriores a excepcion de los siguientes
+scene_graph: este permite la modelación jerarquica que fue muy necesaria para hacer este trabajo
+basic_shapes: cree figuras nuevas, el triangulo, la piramide, la esfera mejorada y arregle un error de texturas
+modelos: archivo auxiliar gigante que tiene todos los modelos ya sea casas, arboles, calle, o piso
+###################################################################################################
+Proceso creativo: 
+pasé una parte muy importante haciendo todos los modelos y tediosamente haciendo movimientos decimales para que queden bien.
+los controles son muchos 
+1 = vista ortografica
+2 = vista en perspectiva
+A/D = rotar camara en xy
+W/S = adelante/atras en la camara
+R/T = subir/bajar en eje Z
+Z/X = rotar camara en Z
+
+Me di el tiempo de intentar de hacer texturas de cada casas usando fotos de ellas sacadas de google street, tambien el color de su techo
+se hizo tomando una foto de un techo y tiñendola del color que se podia obtener de las fotos de google maps (usando photoshop)
+esto probo ser muy dificil ya que las vistas son muy limitadas y no se pueden ver todas las casas. Intente siempre rotar la casa
+para que la puerta este orientada correctamente en todos los casos. 
+Los texturas tuvieron muchos problemas por tema de su tamaño y calidad, pero decidi dejarlo ya que no se me pidio que fuera realista
+y me parecio que las texturas que resultaban eran interesantes como para dejarlas artisticamente.
+
+Segun el enunciado y consultas con los aux, solo hice 2 modelos de casas ( 1piso y 2pisos) ya que todas las casas eran de uno o el otro.´
+cumpli con la necesidad de fueran del mismo color, cantidad de pisos y area relativa.
+como me pedian 22 casas min, corte 2 casas del vecindario para hacer el modelo más compacto.
+
+En el bosque coloque un total de 15 arboles para aparentar densidad.
+Todos los modelos tienen más que las primitivas que se me pidieron.
+
+Para el punto creativo nose que sería, podria considerar todo el trabajo adiccional en edicción que se tuvo que hacer en photoshop para 
+hacer los colores y texturas.
+	
